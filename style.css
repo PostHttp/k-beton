@@ -1,0 +1,27 @@
+.row div {
+	margin-top: 2px;
+}
+.row-centered {
+    text-align:	center;
+}
+.col-centered {
+    display:	inline-block;
+    float:		none;
+    /* reset the text-align */
+    text-align:	left;
+    /* inline-block space fix */
+    margin-right:	-4px;
+}
+.col-lg-3 div {
+	/* width: 100%; */
+}
+
+#a1 {
+	width: 30%;
+}
+#a2 {
+	width: 30%;
+}
+#a3 {
+	width: 30%;
+}

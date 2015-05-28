@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="style.css">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <meta charset="utf-8">
   <title>Калькулятор бетона</title>
 </head>
@@ -40,140 +40,159 @@
     <div class="container">
       <div class="form-inline">
 
-        <!--Входные данные - блок 1--> 
-        <div class="form-group">
-          <h3>Данные для замеса</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <!--Входные данные - блок 1-->
+              <div class="form-group">
+                <h3>Данные для замеса</h3>
 
-          <!--Объем бетона-->
-          <div class="container">
-            <div class="row">
-              <!--<div class="form-inline">-->
-                <div class="col-lg-2">
-                  <label for="inputVBeton">Объем бетона</label>
-                </div>
-                <div class="col-lg-2">
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="inputVBeton" value="100">
-                    <div class="input-group-addon">м<sup>3</sup></div>
+                <!--Объем бетона-->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-2">
+                      <label for="inputVBeton">Объем бетона</label>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="input-group">
+                        <input type="text" class="form-control" id="inputVBeton" value="100">
+                        <div class="input-group-addon">м<sup>3</sup></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              <!--</div>-->
-            </div>
-          </div>
 
-          <!--Марка бетона-->
-          <div class="container">
-            <div class="row">
-              <!--<div class="form-inline">-->
-                <!--<div class="form-group">-->
-                  <div class="col-lg-2">
-                    <label for="selectMBetona">Марка (класс) бетона</label>
+                <!--Марка бетона-->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-2">
+                      <label for="selectMBetona">Марка (класс) бетона</label>
+                    </div>
+                    <div class="col-lg-3">
+                      <select type="text" class="form-control" id="selectMBetona">
+                        <option value="100">M100 | B7,5</option>
+                        <option value="150">M150 | B10</option>
+                        <option value="150">M150 | B12,5</option>
+                        <option selected value="200">M200 | B15</option>
+                        <option value="250">M250 | B20</option>
+                        <option value="300">M300 | B22,5</option>
+                        <option value="350">M350 | B25</option>
+                        <option value="350">M350 | B26,5</option>
+                        <option value="400">M400 | B30</option>
+                        <option value="450">M450 | B35</option>
+                        <option value="550">M550 | B40</option>
+                        <option value="600">M600 | B45</option>
+                      </select>
+                    </div>
                   </div>
-                  <div class="col-lg-2">
-                    <select type="text" class="form-control" id="selectMBetona">
-                      <option value="100">M100 | B7,5</option>
-                      <option value="150">M150 | B10</option>
-                      <option value="150">M150 | B12,5</option>
-                      <option selected value="200">M200 | B15</option>
-                      <option value="250">M250 | B20</option>
-                      <option value="300">M300 | B22,5</option>
-                      <option value="350">M350 | B25</option>
-                      <option value="350">M350 | B26,5</option>
-                      <option value="400">M400 | B30</option>
-                      <option value="450">M450 | B35</option>
-                      <option value="550">M550 | B40</option>
-                      <option value="600">M600 | B45</option>
-                    </select>
+                </div>
+
+                <!--Подвижность смеси-->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-2">
+                      <label for="selectPodSmesi">Подвижность смеси</label>
+                    </div>
+                    <div class="col-lg-3">
+                      <select type="text" class="form-control" id="selectPGSmesi">
+                        <option value="0">Ж</option>
+                        <option selected value="1">П</option>
+                      </select>
+                      <label for="selectNSmesi">-</label>
+                      <select type="text" class="form-control" id="selectNSmesi">
+                        <option value="0">1</option>
+                        <option value="1">2</option>
+                        <option selected value="2">3</option>
+                        <option value="3">4</option>
+                      </select>
+                    </div>
                   </div>
-                <!--</div>-->
-              <!--</div>-->
-            </div>
-          </div>
-
-          <!--Подвижность смеси-->
-          <div class="form-inline">
-            <div class="form-group">
-              <label for="selectPodSmesi">Подвижность смеси</label>
-              <select type="text" class="form-control" id="selectPGSmesi">
-                <option value="0">Ж</option>
-                <option selected value="1">П</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="selectNSmesi">-</label>
-              <select type="text" class="form-control" id="selectNSmesi">
-                <option value="0">1</option>
-                <option value="1">2</option>
-                <option selected value="2">3</option>
-                <option value="3">4</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-
-        <!--Входные данные - блок 2--> 
-        <div class="form-group">
-          <h3>Исходные данные</h3>
-
-          <!--Бетономешалка--> 
-          <div class="form-inline">
-            <label for="inputBetonomeshalks">Бетономешалка</label>
-            <div class="input-group">
-              <input type="text" class="form-control" id="inputBetonomeshalks" value="180">
-              <div class="input-group-addon">л</div>
-            </div>
-          </div>
-
-          <!--Марка цемента-->
-          <div class="form-inline">
-            <div class="form-group">
-              <label for="selectMCement">Марка цемента</label>
-              <select type="text" class="form-control" id="selectMCement">
-                <option value="300">M300</option>
-                <option selected value="400">M400</option>
-                <option value="500">M500</option>
-                <option value="600">M600</option>
-              </select>
-            </div>
-          </div>
-
-          <!--Мелкий заполнитель-->
-          <div class="form-inline">
-            <div class="form-group">
-              <label for="selectSmallFiller">Мелкий заполнитель</label>
-              <div class="input-group">
-                <select type="text" class="form-control" id="selectSmallFiller">
-                  <option value="0">Мелкий | &lt; 1,8</option>
-                  <option selected value="1">Средний | 2-2,5</option>
-                  <option value="2">Крупный | &gt; 2,5</option>
-                </select>
-                <div class="input-group-addon">мм</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!--Крупный заполнитель-->
-          <div class="form-inline">
-            <div class="form-group">
-              <label for="selectBigFillerType">Крупный заполнитель</label>
-              <select type="text" class="form-control" id="selectBigFillerType">
-                <option value="0">Гравий</option>
-                <option value="1">Щебень</option>
-              </select>
-            </div>
-            <div class="form-group">
+            <div class="col-lg-6">
+              <!--Входные данные - блок 2-->
               <div class="form-group">
-                <label for="selectBigFillerType">-</label>
-                <div class="input-group">
-                  <select type="text" class="form-control" id="selectBigFillerType">
-                    <option value="0">10</option>
-                    <option selected value="1">20</option>
-                    <option value="2">40</option>
-                    <option value="3">70</option>
-                  </select>
-                  <div class="input-group-addon">мм</div>
+                <h3>Исходные данные</h3>
+
+                <!--Бетономешалка-->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-2">
+                      <label for="inputBetonomeshalks">Бетономешалка</label>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="input-group">
+                        <input type="text" class="form-control" id="inputBetonomeshalks" value="180">
+                        <div class="input-group-addon">л</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
+                <!--Марка цемента-->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-2">
+                      <label for="selectMCement">Марка цемента</label>
+                    </div>
+                    <div class="col-lg-3">
+                      <select type="text" class="form-control" id="selectMCement">
+                        <option value="300">M300</option>
+                        <option selected value="400">M400</option>
+                        <option value="500">M500</option>
+                        <option value="600">M600</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Мелкий заполнитель-->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-2">
+                      <label for="selectSmallFiller">Мелкий заполнитель</label>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="input-group">
+                        <select type="text" class="form-control" id="selectSmallFiller">
+                          <option value="0">Мелкий | &lt; 1,8</option>
+                          <option selected value="1">Средний | 2-2,5</option>
+                          <option value="2">Крупный | &gt; 2,5</option>
+                        </select>
+                        <div class="input-group-addon">мм</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Крупный заполнитель-->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-2">
+                      <label for="selectBigFillerType">Крупный заполнитель</label>
+                    </div>
+                    <div class="col-lg-3">
+                      <select type="text" class="form-control" id="selectBigFillerType">
+                        <option value="0">Гравий</option>
+                        <option value="1">Щебень</option>
+                      </select>
+                      <label for="selectBigFillerType">-</label>
+                      <div class="input-group">
+                        <select type="text" class="form-control" id="selectBigFillerType">
+                          <option value="0">10</option>
+                          <option selected value="1">20</option>
+                          <option value="2">40</option>
+                          <option value="3">70</option>
+                        </select>
+                        <div class="input-group-addon">мм</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
             </div>
           </div>
@@ -181,170 +200,268 @@
       </div>
     
 
-
-    <button type="button" class="btn btn-success">Расчитать</button>
-
-
-    <!--Результирующие данные-->
-    <div class="form-inline">
-      <!--Результирующие данные - блок 1-->
-      <div class="form-group">
-        <h3>Состав бетона (кг)</h3>
-
-        <!--Вода--> 
-        <div class="form-inline">
-          <label for="output-Voda-KG">Вода</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-Voda-KG" value="215">
-            <div class="input-group-addon">кг</div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-centered">
+            <button type="button" class="btn btn-success">Расчитать</button>
           </div>
         </div>
-
-        <!--Цемент--> 
-        <div class="form-inline">
-          <label for="output-Cement-KG">Цемент</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-Cement-KG" value="287">
-            <div class="input-group-addon">кг</div>
-          </div>
-        </div>
-
-        <!--Щебень--> 
-        <div class="form-inline">
-          <label for="output-Sheben-KG">Щебень</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-Sheben-KG" value="1210">
-            <div class="input-group-addon">кг</div>
-          </div>
-        </div>
-
-        <!--Песок--> 
-        <div class="form-inline">
-          <label for="output-Pesok-KG">Песок</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-Pesok-KG" value="597">
-            <div class="input-group-addon">кг</div>
-          </div>
-        </div>
-
-        <!--ВодоЦемент--> 
-        <div class="form-inline">
-          <label for="output-VodoCement-KG">Водоцемент</label>
-          <input type="text" class="form-control" id="output-VodoCement-KG" value="0,75">
-        </div>
-
-        <!--Плотность бетонной смеси--> 
-        <div class="form-inline">
-          <label for="output-PBetonSmesi-KG">Плотность бетонной смеси</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-PBetonSmesi-KG" value="2309">
-            <div class="input-group-addon">кг</div>
-          </div>
-        </div>
-
-        <!--Соотношение Ц:П:Щ--> 
-        <div class="form-inline">
-          <label for="output-SootnoshenieCement-KG">Соотношение Ц:П:Щ</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-SootnoshenieCement-KG" value="1">
-            <div class="input-group-addon">кг</div>
-          </div>
-
-          <label for="output-SootnosheniePesok-KG">:</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-SootnosheniePesok-KG" value="2,1">
-            <div class="input-group-addon">кг</div>
-          </div>
-
-          <label for="output-SootnoshenieSheben-KG">:</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-SootnoshenieSheben-KG" value="4,2">
-            <div class="input-group-addon">кг</div>
-          </div>
-        </div>
-
       </div>
 
 
-      <!--Результирующие данные - блок 2-->
-      <div class="form-group">
-        <h3>Состав бетона (л)</h3>
-
-        <!--Вода--> 
+      <!--Результирующие данные-->
+      <div class="container">
         <div class="form-inline">
-          <label for="output-Voda-L">Вода</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-Voda-L" value="215">
-            <div class="input-group-addon">л</div>
-          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <!--Результирующие данные - блок 1-->
+                <div class="form-group">
+                  <h3>Состав бетона (кг)</h3>
+
+                  <!--Вода--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-Voda-KG">Вода</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-Voda-KG" value="215">
+                          <div class="input-group-addon">кг</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Цемент--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-Cement-KG">Цемент</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-Cement-KG" value="287">
+                          <div class="input-group-addon">кг</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Щебень--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-Sheben-KG">Щебень</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-Sheben-KG" value="1210">
+                          <div class="input-group-addon">кг</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Песок--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-Pesok-KG">Песок</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-Pesok-KG" value="597">
+                          <div class="input-group-addon">кг</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--ВодоЦемент--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-VodoCement-KG">Водоцемент</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <input type="text" class="form-control" id="output-VodoCement-KG" value="0,75">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Плотность бетонной смеси--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-PBetonSmesi-KG">Плотность бетонной смеси</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-PBetonSmesi-KG" value="2309">
+                          <div class="input-group-addon">кг</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Соотношение Ц:П:Щ--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-SootnoshenieCement-KG">Соотношение Ц:П:Щ</label>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="input-group" id="a1">
+                          <input type="text" class="form-control" id="output-SootnoshenieCement-KG" value="1">
+                          <div class="input-group-addon">кг</div>
+                        </div>
+
+                        <label for="output-SootnosheniePesok-KG">:</label>
+                        <div class="input-group" id="a2">
+                          <input type="text" class="form-control" id="output-SootnosheniePesok-KG" value="2,1">
+                          <div class="input-group-addon">кг</div>
+                        </div>
+
+                        <label for="output-SootnoshenieSheben-KG">:</label>
+                        <div class="input-group" id="a3">
+                          <input type="text" class="form-control" id="output-SootnoshenieSheben-KG" value="4,2">
+                          <div class="input-group-addon">кг</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <!--Результирующие данные - блок 2-->
+                <div class="form-group">
+                  <h3>Состав бетона (л)</h3>
+
+                  <!--Вода--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-Voda-L">Вода</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-Voda-L" value="215">
+                          <div class="input-group-addon">л</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Цемент--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-Cement-L">Цемент</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-Cement-L" value="221">
+                          <div class="input-group-addon">л</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Щебень--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-Sheben-L">Щебень</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-Sheben-L" value="818">
+                          <div class="input-group-addon">л</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Песок--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-Pesok-L">Песок</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-Pesok-L" value="398">
+                          <div class="input-group-addon">л</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--ВодоЦемент--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-VodoCement-L">Водоцемент</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <input type="text" class="form-control" id="output-VodoCement-L" value="0,75">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Плотность бетонной смеси--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-PBetonSmesi-L">Плотность бетонной смеси</label>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="output-PBetonSmesi-L" value="2309">
+                          <div class="input-group-addon">л</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Соотношение Ц:П:Щ--> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <label for="output-SootnoshenieCement-L">Соотношение Ц:П:Щ</label>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="input-group" id="a1">
+                          <input type="text" class="form-control" id="output-SootnoshenieCement-L" value="1">
+                          <div class="input-group-addon">л</div>
+                        </div>
+
+                        <label for="output-SootnosheniePesok-L">:</label>
+                        <div class="input-group" id="a2">
+                          <input type="text" class="form-control" id="output-SootnosheniePesok-L" value="1,8">
+                          <div class="input-group-addon">л</div>
+                        </div>
+
+                        <label for="output-SootnoshenieSheben-L">:</label>
+                        <div class="input-group" id="a3">
+                          <input type="text" class="form-control" id="output-SootnoshenieSheben-L" value="3,7">
+                          <div class="input-group-addon">л</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
         </div>
-
-        <!--Цемент--> 
-        <div class="form-inline">
-          <label for="output-Cement-L">Цемент</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-Cement-L" value="221">
-            <div class="input-group-addon">л</div>
-          </div>
-        </div>
-
-        <!--Щебень--> 
-        <div class="form-inline">
-          <label for="output-Sheben-L">Щебень</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-Sheben-L" value="818">
-            <div class="input-group-addon">л</div>
-          </div>
-        </div>
-
-        <!--Песок--> 
-        <div class="form-inline">
-          <label for="output-Pesok-L">Песок</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-Pesok-L" value="398">
-            <div class="input-group-addon">л</div>
-          </div>
-        </div>
-
-        <!--ВодоЦемент--> 
-        <div class="form-inline">
-          <label for="output-VodoCement-L">Водоцемент</label>
-          <input type="text" class="form-control" id="output-VodoCement-L" value="0,75">
-        </div>
-
-        <!--Плотность бетонной смеси--> 
-        <div class="form-inline">
-          <label for="output-PBetonSmesi-L">Плотность бетонной смеси</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-PBetonSmesi-L" value="2309">
-            <div class="input-group-addon">л</div>
-          </div>
-        </div>
-
-        <!--Соотношение Ц:П:Щ--> 
-        <div class="form-inline">
-          <label for="output-SootnoshenieCement-L">Соотношение Ц:П:Щ</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-SootnoshenieCement-L" value="1">
-            <div class="input-group-addon">л</div>
-          </div>
-
-          <label for="output-SootnosheniePesok-L">:</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-SootnosheniePesok-L" value="1,8">
-            <div class="input-group-addon">л</div>
-          </div>
-
-          <label for="output-SootnoshenieSheben-L">:</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="output-SootnoshenieSheben-L" value="3,7">
-            <div class="input-group-addon">л</div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </div>
 
   </form>
 </body>
