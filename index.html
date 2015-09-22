@@ -5,6 +5,7 @@
   <link href="style.css" rel="stylesheet">
   <meta charset="utf-8">
   <title>Калькулятор бетона</title>
+  <script src="calc/calculation.js"></script>
 </head>
 <body>
   <div class="container">
@@ -176,11 +177,11 @@
                     <div class="col-lg-3">
                       <select type="text" class="form-control" id="selectBigFillerType">
                         <option value="0">Гравий</option>
-                        <option value="1">Щебень</option>
+                        <option selected value="1">Щебень</option>
                       </select>
-                      <label for="selectBigFillerType">-</label>
+                      <label for="selectBigFillerValue">-</label>
                       <div class="input-group">
-                        <select type="text" class="form-control" id="selectBigFillerType">
+                        <select type="text" class="form-control" id="selectBigFillerValue">
                           <option value="0">10</option>
                           <option selected value="1">20</option>
                           <option value="2">40</option>
@@ -203,7 +204,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-centered">
-            <button type="button" class="btn btn-success">Расчитать</button>
+            <button type="button" class="btn btn-success" onclick="mainCalcFunc()">Расчитать</button>
           </div>
         </div>
       </div>
@@ -224,11 +225,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-Voda-KG">Вода</label>
+                        <label for="output_Voda_KG">Вода</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-Voda-KG" value="215">
+                          <input type="text" class="form-control" id="output_Voda_KG" value="" readonly="readonly">
                           <div class="input-group-addon">кг</div>
                         </div>
                       </div>
@@ -239,11 +240,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-Cement-KG">Цемент</label>
+                        <label for="output_Cement_KG">Цемент</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-Cement-KG" value="287">
+                          <input type="text" class="form-control" id="output_Cement_KG" value="" readonly="readonly">
                           <div class="input-group-addon">кг</div>
                         </div>
                       </div>
@@ -254,11 +255,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-Sheben-KG">Щебень</label>
+                        <label for="output_Sheben_KG">Щебень</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-Sheben-KG" value="1210">
+                          <input type="text" class="form-control" id="output_Sheben_KG" value="" readonly="readonly">
                           <div class="input-group-addon">кг</div>
                         </div>
                       </div>
@@ -269,11 +270,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-Pesok-KG">Песок</label>
+                        <label for="output_Pesok_KG">Песок</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-Pesok-KG" value="597">
+                          <input type="text" class="form-control" id="output_Pesok_KG" value="" readonly="readonly">
                           <div class="input-group-addon">кг</div>
                         </div>
                       </div>
@@ -284,10 +285,10 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-VodoCement-KG">Водоцемент</label>
+                        <label for="output_VodoCement_KG">Водоцемент</label>
                       </div>
                       <div class="col-lg-3">
-                        <input type="text" class="form-control" id="output-VodoCement-KG" value="0,75">
+                        <input type="text" class="form-control" id="output_VodoCement_KG" value="" readonly="readonly">
                       </div>
                     </div>
                   </div>
@@ -296,11 +297,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-PBetonSmesi-KG">Плотность бетонной смеси</label>
+                        <label for="output_PBetonSmesi_KG">Плотность бетонной смеси</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-PBetonSmesi-KG" value="2309">
+                          <input type="text" class="form-control" id="output_PBetonSmesi_KG" value="" readonly="readonly">
                           <div class="input-group-addon">кг</div>
                         </div>
                       </div>
@@ -311,23 +312,23 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-SootnoshenieCement-KG">Соотношение Ц:П:Щ</label>
+                        <label for="output_SootnoshenieCement_KG">Соотношение Ц:П:Щ</label>
                       </div>
                       <div class="col-lg-4">
                         <div class="input-group" id="a1">
-                          <input type="text" class="form-control" id="output-SootnoshenieCement-KG" value="1">
+                          <input type="text" class="form-control" id="output_SootnoshenieCement_KG" value="" readonly="readonly">
                           <div class="input-group-addon">кг</div>
                         </div>
 
-                        <label for="output-SootnosheniePesok-KG">:</label>
+                        <label for="output_SootnosheniePesok_KG">:</label>
                         <div class="input-group" id="a2">
-                          <input type="text" class="form-control" id="output-SootnosheniePesok-KG" value="2,1">
+                          <input type="text" class="form-control" id="output_SootnosheniePesok_KG" value="" readonly="readonly">
                           <div class="input-group-addon">кг</div>
                         </div>
 
-                        <label for="output-SootnoshenieSheben-KG">:</label>
+                        <label for="output_SootnoshenieSheben_KG">:</label>
                         <div class="input-group" id="a3">
-                          <input type="text" class="form-control" id="output-SootnoshenieSheben-KG" value="4,2">
+                          <input type="text" class="form-control" id="output_SootnoshenieSheben_KG" value="" readonly="readonly">
                           <div class="input-group-addon">кг</div>
                         </div>
                       </div>
@@ -346,11 +347,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-Voda-L">Вода</label>
+                        <label for="output_Voda_L">Вода</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-Voda-L" value="215">
+                          <input type="text" class="form-control" id="output_Voda_L" value="" readonly="readonly">
                           <div class="input-group-addon">л</div>
                         </div>
                       </div>
@@ -361,11 +362,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-Cement-L">Цемент</label>
+                        <label for="output_Cement_L">Цемент</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-Cement-L" value="221">
+                          <input type="text" class="form-control" id="output_Cement_L" value="" readonly="readonly">
                           <div class="input-group-addon">л</div>
                         </div>
                       </div>
@@ -376,11 +377,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-Sheben-L">Щебень</label>
+                        <label for="output_Sheben_L">Щебень</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-Sheben-L" value="818">
+                          <input type="text" class="form-control" id="output_Sheben_L" value="" readonly="readonly">
                           <div class="input-group-addon">л</div>
                         </div>
                       </div>
@@ -391,11 +392,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-Pesok-L">Песок</label>
+                        <label for="output_Pesok_L">Песок</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-Pesok-L" value="398">
+                          <input type="text" class="form-control" id="output_Pesok_L" value="" readonly="readonly">
                           <div class="input-group-addon">л</div>
                         </div>
                       </div>
@@ -406,10 +407,10 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-VodoCement-L">Водоцемент</label>
+                        <label for="output_VodoCement_L">Водоцемент</label>
                       </div>
                       <div class="col-lg-3">
-                        <input type="text" class="form-control" id="output-VodoCement-L" value="0,75">
+                        <input type="text" class="form-control" id="output_VodoCement_L" value="" readonly="readonly">
                       </div>
                     </div>
                   </div>
@@ -418,11 +419,11 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-PBetonSmesi-L">Плотность бетонной смеси</label>
+                        <label for="output_PBetonSmesi_L">Плотность бетонной смеси</label>
                       </div>
                       <div class="col-lg-3">
                         <div class="input-group">
-                          <input type="text" class="form-control" id="output-PBetonSmesi-L" value="2309">
+                          <input type="text" class="form-control" id="output_PBetonSmesi_L" value="" readonly="readonly">
                           <div class="input-group-addon">л</div>
                         </div>
                       </div>
@@ -433,23 +434,23 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-2">
-                        <label for="output-SootnoshenieCement-L">Соотношение Ц:П:Щ</label>
+                        <label for="output_SootnoshenieCement_L">Соотношение Ц:П:Щ</label>
                       </div>
                       <div class="col-lg-4">
                         <div class="input-group" id="a1">
-                          <input type="text" class="form-control" id="output-SootnoshenieCement-L" value="1">
+                          <input type="text" class="form-control" id="output_SootnoshenieCement_L" value="" readonly="readonly">
                           <div class="input-group-addon">л</div>
                         </div>
 
-                        <label for="output-SootnosheniePesok-L">:</label>
+                        <label for="output_SootnosheniePesok_L">:</label>
                         <div class="input-group" id="a2">
-                          <input type="text" class="form-control" id="output-SootnosheniePesok-L" value="1,8">
+                          <input type="text" class="form-control" id="output_SootnosheniePesok_L" value="" readonly="readonly">
                           <div class="input-group-addon">л</div>
                         </div>
 
-                        <label for="output-SootnoshenieSheben-L">:</label>
+                        <label for="output_SootnoshenieSheben_L">:</label>
                         <div class="input-group" id="a3">
-                          <input type="text" class="form-control" id="output-SootnoshenieSheben-L" value="3,7">
+                          <input type="text" class="form-control" id="output_SootnoshenieSheben_L" value="" readonly="readonly">
                           <div class="input-group-addon">л</div>
                         </div>
                       </div>
