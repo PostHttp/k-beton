@@ -205,7 +205,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-lg-12 col-centered">
-                  <button type="button" class="btn btn-success" onclick="mainCalcFunc()">Расчитать</button>
+                  <button type="button" class="btn btn-success" onclick="mainCalcFunc()">Рассчитать</button>
                 </div>
               </div>
             </div>
