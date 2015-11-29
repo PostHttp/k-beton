@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <title>Калькулятор бетона</title>
   <script src="calc/calculation.js"></script>
+  <meta http-equiv="refresh" content="0; url=http://betonapp.herokuapp.com/calculator.php" />
 </head>
 <body>
   
@@ -37,11 +38,17 @@
     <div class="row">
       <div class="col-md-12">
 
-
-
+      <h3>Раздел в разработке..</h3>
 
       </div>
     </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
     <!--Адресс-->
     <div class="row">
